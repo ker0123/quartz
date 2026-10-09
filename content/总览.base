@@ -1,0 +1,18 @@
+views:
+  - type: table
+    name: 文章属性
+    filters:
+      and:
+        - "!date.isEmpty()"
+    order:
+      - file.name
+      - title
+      - file.folder
+      - tags
+      - date
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.tags: 783
+      note.date: 226
