@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: zh-CN
-  baseUrl: blog.kers.site
+  baseUrl: quartz.kers.site
   ignorePatterns:
     - private
     - templates
