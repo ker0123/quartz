@@ -4,11 +4,11 @@ tags:
   - readme
 ---
 
-之前, 我用 [hexo](https://github.com/hexojs/hexo) 这个静态博客项目, 写自己的在线同步笔记, 然后可以在公网访问和阅读. 最早一篇笔记在 2025/05/29 写下, 是一篇讲我怎么部署 alist(另外一个网盘服务) 的文章(见 [[record-openlist]]), 到现在已经一年多了. 期间断断续续写了总共 20 多篇文章, 对于一年零五个月的跨度, 实在太少了.
+之前, 我用 [hexo](https://github.com/hexojs/hexo) 这个静态博客项目, 写自己的在线同步笔记, 然后可以在公网访问和阅读. 最早一篇笔记在 2025/05/29 写下, 是一篇讲我怎么部署 alist(另外一个网盘服务) 的文章(见 [OpenList 部署与配置](app-startup/record-openlist.md)), 到现在已经一年多了. 期间断断续续写了总共 20 多篇文章, 对于一年零五个月的跨度, 实在太少了.
 
 中间总结过几次原因, hexo 项目也变样了很多次. 不过写作频率还是小停两个月, 大停四个月... 总的时间线可以看看下面这张, 本次重构前的总观图:
 
-![obsidian 数据库分析](assets/overview-before-refactor.png)
+![obsidian 数据库分析](_assets/overview-before-refactor.png)
 
 不难看出非常惨淡了.
 
@@ -24,7 +24,7 @@ tags:
 
 > "试试其他类似的框架" 这个想法, 我专门去实践了 ---- 写 hexo 期间, 我用过 vscode 上一个专门管理各种博客的插件, 叫 [front-matter](https://frontmatter.codes), 多方对比了它支持的博客框架:
 > 
-> ![[front-matter-init.png]]
+> ![front-matter 插件初始化界面](_assets/front-matter-init.png)
 > 
 > 最后发现其他框架要么是比 hexo 更重, 要么是用的框架语言和实现方式我不喜欢, 最后本次尝试退而求次, 以换了换 hexo 主题告终.
 

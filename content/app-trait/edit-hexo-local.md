@@ -10,7 +10,7 @@ Hexo 博客的源文档存放在服务器上, 通过 ssh + vim 编辑太为硬�
 
 这是我使用 vscode + ssh-remote 插件编辑文档时, 服务器资源的占用:
 
-![常态占 1G 内存, 峰值直接到顶, CPU 偶尔到顶导致远程手段卡住](vscode-cause-bad.png)
+![常态占 1G 内存, 峰值直接到顶, CPU 偶尔到顶导致远程手段卡住](_assets/vscode-cause-bad.png)
 
 首先考虑的是换个编辑器, 直接用终端 + ssh 连接和使用命令行部署, 用 yazi 做导航, 用 vim 做编辑, 可行但是太硬核了; 使用 webdev 同步比较方便, 但是没法远程部署.
 
@@ -20,7 +20,7 @@ Hexo 博客的源文档存放在服务器上, 通过 ssh + vim 编辑太为硬�
 
 ## 1. 将仓库上传到 github
 
-![hexo 的文章源放在 source 文件夹中](hexo-files.png)
+![hexo 的文章源放在 source 文件夹中](_assets/hexo-files.png)
 
 Hexo 的文章源一般只放在 source 文件夹中, 其它文件夹大部分是 Hexo 在配置和部署时生成的, 可以不加入版本控制.
 
@@ -67,7 +67,7 @@ git push -u origin main
 
 在浏览器中操作较为方便. 进入创建好的 github 上的仓库, 进入 Actions, 选择创建一个空的 workflow, 更名为 `deploy.yml`. 然后填入以下内容.
 
-![找到新建空 workflow](new-action.png)
+![找到新建空 workflow](_assets/new-action.png)
 
 ```yaml
 name: deploy on server
@@ -114,7 +114,7 @@ hexo clean && hexo generate
 
 直接提交这个脚本到远程仓库, 触发 workflow, 发现执行失败.
 
-![错误信息是 `error: can't connect without a private SSH key or password`](action-failed.png)
+![错误信息是 `error: can't connect without a private SSH key or password`](_assets/action-failed.png)
 
 我们需要创建一对 ssh 密钥, github 远程仓库持有私钥, 服务器中持有公钥(保存在 `~/.ssh/authorized_keys` 中). 这样 github action 才可以通过 ssh 连接到服务器上执行部署脚本.
 
@@ -140,10 +140,10 @@ cat ~/.ssh/id_ed25519_gh
 
 然后添加到仓库 secrets 中.
 
-![添加 secrets](add-secret.png)
+![添加 secrets](_assets/add-secret.png)
 
 在 github 上手动触发 workflow, 此时应该能部署成功.
 
-![手动触发 workflow](run-action-manual.png)
+![手动触发 workflow](_assets/run-action-manual.png)
 
 以后, 每次在本地编辑完文章, 只需推送到主分支, github 便会自动调用服务器部署脚本, 完成 Hexo 博客的自动部署.

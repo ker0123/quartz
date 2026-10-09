@@ -25,7 +25,7 @@ tags:
 
 安装完毕后, 还需要到 "任务管理器 > 打开服务" 中将 OpenSSH Server 的**两个**相关服务设置为自动启动, 并手动启动一次.
 
-![start-sshd-service](start-sshd-service.png)
+![start-sshd-service](_assets/start-sshd-service.png)
 
 *如果找不到该服务, 请检测 OpenSSH Server 是否安装成功, 或者重启电脑再去查找*
 
@@ -116,7 +116,7 @@ remotePort = 6000
 
 然后在命令行运行 `nssm install frpc`, 以 GUI 交互的形式, 填写服务参数, 注册 frpc 服务.
 
-![nssm-install-frpc](nssm-install-frpc.png)
+![nssm-install-frpc](_assets/nssm-install-frpc.png)
 
 path 中填写 `frpc.exe` 的路径; argument 中填写 `-c` + 配置文件的路径. 你可以顺便在 detials 页签中设置一下服务名称和描述.
 

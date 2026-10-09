@@ -38,7 +38,7 @@ subl sublime_text.exe.crack
 
 按下 `ctrl` + `h` 打开查找替换界面, 输入以上内容并替换.
 
-![sublime-replace](sublime-replace.png)
+![sublime-replace](_assets/sublime-replace.png)
 
 最后关闭 Sublime Text, 使用刚刚修改好的 `sublime_text.exe.crack`, 替换掉 `sublime_text.exe`.
 
@@ -48,7 +48,7 @@ cp sublime_text.exe.crack sublime_text.exe
 
 此时正常打开 Sublime Text, 发现证书授权呈现出已通过的状态.
 
-![sublime-after-crack](sublime-after-crack.png)
+![sublime-after-crack](_assets/sublime-after-crack.png)
 
 该方法不一定每个版本都有效, 修改前一定要先备份, 否则改不回来的话, 就得灰溜溜地去重装了.
 
