@@ -35,7 +35,7 @@ yazi 不建议使用包管理器安装 `file` 命令行工具. 而是建议使�
 
 新建环境变量(想要快速到达界面, 可以按下 win + Q, 然后搜索 "编辑系统环境变量"), 键为 `YAZI_FILE_ONE`, 值为 `file` 的路径, 例如 `C:\Program Files\Git\usr\bin\file.exe`.
 
-![像这样新建环境变量](env-var-yazi-file-one.png)
+![像这样新建环境变量](_assets/env-var-yazi-file-one.png)
 
 ### 其它命令行工具
 

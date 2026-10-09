@@ -109,7 +109,7 @@ server {
 
 登录成功后从页面下方的[管理]按钮, 进入管理界面. 在这里你可以重新设置帐号密码, 或者创建新的帐号并为其分配权限, 或者设置访客的权限...
 
-![openlist-change-pw](openlist-change-pw.png)
+![openlist-change-pw](_assets/openlist-change-pw.png)
 
 在存储界面, 选择 [添加], 以添加各式各样的存储器. 这是 OpenList 的主要功能. 你可以访问 [Alist 文档的添加存储章节](https://alistgo.com/zh/guide/drivers/), 查看各种存储器的配置细节.
 
@@ -123,7 +123,7 @@ server {
 
 添加方式很简单, 通过浏览器访问 OpenList 生成的网站
 
-![配置本机存储](alist-localstorage-setting.png)
+![配置本机存储](_assets/alist-localstorage-setting.png)
 
 ### 通过 FTP 访问服务器文件
 
@@ -131,7 +131,7 @@ server {
 
 首先要在 `设置 > 全局` 中关闭[签名所有]选项, 打开[转发直链参数]选项. 之后便可以右键文件, 选择分享, 生成直链来使用了.
 
-![设置全局](alist-golbal-setting.png)
+![设置全局](_assets/alist-golbal-setting.png)
 
 另外, 记得配合元信息为不想分享的文件夹设置密码, 防止外界可以不登录, 就通过轮询直链访问云盘内的所有文件.
 
@@ -143,15 +143,15 @@ server {
 
 又例如通过 frp 配置好个人电脑的内网穿透, [通过 ssh 访问内网机器](https://gofrp.org/zh-cn/docs/examples/ssh/), 由此构建[SFTP 存储](https://alistgo.com/zh/guide/drivers/sftp.html).
 
-![配置SFTP](alist-sftp-setting.png)
+![配置SFTP](_assets/alist-sftp-setting.png)
 
 ### Alias 别名(通过别名与权限控制访客的访问范围)
 
 又例如, 通过[alias 别名](https://alistgo.com/zh/guide/advanced/alias.html), 将多个存储器上的部分内容引用, 放到新的一个文件夹里, 方便设置访问权限.
 
-![配置Alias](alist-alias-setting.png)
+![配置Alias](_assets/alist-alias-setting.png)
 
-![为访客用户设置只能看到Share目录的权限](alist-users-setting.png)
+![为访客用户设置只能看到Share目录的权限](_assets/alist-users-setting.png)
 
 ### 其他
 

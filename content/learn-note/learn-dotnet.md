@@ -27,13 +27,13 @@ tags:
 
 想要开始的话: 至少要安装 `C# Dev Kit` 扩展, 它将提供自动构建项目的功能, 否则也可以通过 `dotnet` 命令行来进行构建项目, 引入项目等操作. 其次还可以安装 .NET 扩展包, 对编程有一定帮助. 自己用的时候安装了这几个:
 
-![.NET开发用插件](dotnet-extensions.png)
+![.NET开发用插件](_assets/dotnet-extensions.png)
 
 ### .NET 项目结构浅析
 
 使用扩展提供的命令(`.NET: New Project`)构建好项目之后, 项目结构中需要理解的地方:
 
-![项目中一些文件的内容意义](dotnet-files-analysis.png)
+![项目中一些文件的内容意义](_assets/dotnet-files-analysis.png)
 
 如上图所示, 已发布的输出包含以下文件:
 
@@ -52,7 +52,7 @@ tags:
 
 使用第三方库的时候, 就像使用非 C++ 标准库一样, 需要把第三方类库 "引入" 项目(当然也可以在项目内新建一个类库, 引入到另一个类库). 在 Visual Studio Code 中, 操作流程大致如下:
 
-![添加类库以及引用的步骤](dotnet-addlib.png)
+![添加类库以及引用的步骤](_assets/dotnet-addlib.png)
 
 > 不难看出. .NET 软件框架的主要特征, 就是以 `.NET 项目` 为基础单位, 每个项目单独编写和编译, 其主要产物可能是 `链接库(.dll)` 或 `可执行程序(.exe)`. `.NET 项目` 之间再相互引用, 组合而成一整个项目.
 > 
@@ -64,7 +64,7 @@ tags:
 
 如果是要创建供其他项目使用的类库的话, 选 WPF 类库.
 
-![选择项目模板](dotnet-vs-create.png)
+![选择项目模板](_assets/dotnet-vs-create.png)
 
 创建好项目后, 项目配置, 编译运行均为图形界面操作, 与 C++ 项目基本一致, 不再赘述.
 
