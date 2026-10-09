@@ -8,8 +8,6 @@ tags:
 
 在个人电脑上安装 OpenSSH Server 服务, 然后使用 frp 内网穿透, 将服务暴露在公网上.
 
-<!--more-->
-
 ## 需要准备
 
 - 能访问公网的 Windows 个人电脑
@@ -69,7 +67,7 @@ Match Group administrators
 以下是最简的一套内网穿透配置.
 
 服务器上:
-```ini
+```toml
 # frps.toml
 
 # 服务器在端口 7000 上监听 frp 相关请求
@@ -78,7 +76,7 @@ bindPort = 7000
 ```
 
 个人电脑上:
-```ini
+```toml
 # frpc.toml
 
 # 绑定 frps 服务器为 kers.site, 端口为 7000
