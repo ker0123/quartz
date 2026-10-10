@@ -25,3 +25,12 @@ title: ker0123 的数字花园
   - [邮箱服务器 mx.kers.site](https://mx.kers.site) - 基于 stalwart 的自托管邮箱服务
 - private:
   - [机器人面板 kers.site:6185](http://kers.site:6185) - 基于 astrbot 的自托管 AI 聊天机器人
+
+## 联系方式
+
+如果你不知道从哪里看到了这个网站, 还想联系我:
+
+- e-mail: ker0123@kers.site
+- e-mail: ker_0123@163.com
+- qq: 1485465108
+- telegram: @ker_0123
