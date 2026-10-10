@@ -41,7 +41,14 @@ tags:
 
 ## 迁移
 
-没有之间. 我已经懒得写是迁移细节了, 以后自己再去找官方教程就可以. 我用的路径是:  github 上 fork quartz 仓库, 把 hexo 的文章 commit 到 quartz 项目的 content/ 目录里. 再用 cloudflare 的免费 page 服务部署好. 最后添加 DNS 记录, 将 quartz.kers.site 这个域名解析到 cloudflare 生成的 page 的地址.
+我已经懒得写是迁移细节了, 以后自己再去找官方教程就可以.
+
+大体方案是:
+
+1. 在 github 上 fork quartz 仓库
+2. 把 hexo 的文章复制到 quartz 项目的 content/ 目录里. 然后 commit 到 github 的远程仓库.
+3. 用 cloudflare 免费创建一个 page, 连接 github 仓库, 设置每次 push 后自动部署
+4. 添加 DNS 记录, 将 quartz.kers.site 这个域名解析到 cloudflare 生成的 page 地址.
 
 ~~忽然发现自己事实上拽英文太多了~~
 
