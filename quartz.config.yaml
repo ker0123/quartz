@@ -230,7 +230,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
+        GitHub: https://github.com/ker0123/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
     layout:
       position: afterBody
