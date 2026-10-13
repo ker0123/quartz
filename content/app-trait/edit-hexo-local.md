@@ -1,6 +1,6 @@
 ---
 title: 通过 Github Action, 本地编辑 Hexo 博客并自动部署
-date: 2026-06-15 20:20:01
+date: 2026-06-15
 tags:
   - hexo
   - github-action

@@ -5,12 +5,13 @@ views:
       and:
         - "!date.isEmpty()"
     order:
-      - file.name
       - title
       - file.folder
       - tags
       - date
     sort:
+      - property: file.folder
+        direction: ASC
       - property: date
         direction: ASC
     columnSize:

@@ -1,6 +1,6 @@
 ---
 title: Scoop 快速安装指南
-date: 2026-06-25 10:27:17
+date: 2026-06-25
 tags:
   - scoop
   - windows

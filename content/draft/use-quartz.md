@@ -1,6 +1,6 @@
 ---
 title: 开始使用 quartz
-date: 2026-10-09 16:49:00
+date: 2026-10-09
 tags:
   - quartz
 ---

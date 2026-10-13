@@ -13,6 +13,12 @@ title: ker0123 的数字花园
 - [通用技术](comm-tech/index.md) - 与软件开发相关的理论知识, 或者在哪都能用到的知识
 - [学习笔记](learn-note/index.md) - 在学习一些东西时, 随学习进度做的笔记
 
+## 文章总览
+
+_可以点击表头排序_
+
+![[overview.base]]
+
 ## 链接
 
 - public:

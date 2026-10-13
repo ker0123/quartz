@@ -1,6 +1,6 @@
 ---
 title: Linux 切换默认 Shell - chsh
-date: 2026-06-16 10:14:32
+date: 2026-06-16
 tags:
   - linux
   - chsh

@@ -1,6 +1,6 @@
 ---
 title: .gitignore 不是惟一一种忽略 Git 文件的方式
-date: 2026-06-29 08:43:23
+date: 2026-06-29
 tags:
   - git
   - gitignore

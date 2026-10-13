@@ -1,6 +1,6 @@
 ---
 title: 重装 ubuntu 服务器记录
-date: 2026-07-18 22:58:13
+date: 2026-07-18
 tags:
   - linux
   - server

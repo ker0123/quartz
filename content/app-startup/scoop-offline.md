@@ -1,6 +1,6 @@
 ---
 title: 离线安装 scoop, 以及后期更新软件
-date: 2026-09-07 12:21:24
+date: 2026-09-07
 tags:
   - scoop
   - offline

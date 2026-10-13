@@ -1,6 +1,6 @@
 ---
 title: rust 学习笔记
-date: 2025-08-22 12:00:00
+date: 2025-08-22
 tags:
   - rust
   - develop

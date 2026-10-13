@@ -1,6 +1,6 @@
 ---
 title: 从 .NET, 到 WPF, 以及 C#
-date: 2025-06-09 17:10:32
+date: 2025-06-09
 tags:
   - dotnet
   - windows
