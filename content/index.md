@@ -17,27 +17,7 @@ title: ker0123 的数字花园
 
 _可以点击表头排序_
 
-```base
-views:
-  - type: table
-    name: 文章属性
-    filters:
-      and:
-        - "!date.isEmpty()"
-    groupBy:
-      property: file.folder
-      direction: ASC
-    order:
-      - title
-      - tags
-      - date
-    sort:
-      - property: file.folder
-        direction: ASC
-      - property: date
-        direction: DESC
-
-```
+![[Base.base]]
 
 ## 链接
 

@@ -4,6 +4,7 @@ date: 2026-07-18
 tags:
   - linux
   - server
+  - record
 ---
 
 因为之前一直默认在 root 账户下使用 ubuntu, 后来做一些事情发现在个人账户下更好, 于是决定整体重装.
