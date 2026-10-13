@@ -6,18 +6,38 @@ title: ker0123 的数字花园
 
 ## 分类
 
-- [草稿](draft/index.md) - 随便写写, 没有目的
-- [日志](record/index.md) - 不能视作 log, 更像是日常记录, 操作留档
 - [软件安装与配置](app-startup/index.md) - 一些软件的下载安装和初始配置, 防止自己下一次重装时又得到处查
 - [软件使用技巧](app-trait/index.md) - 在使用各种软件(主要是 obsidian 这种具体软件)时, 一些使用的技巧
 - [通用技术](comm-tech/index.md) - 与软件开发相关的理论知识, 或者在哪都能用到的知识
+- [草稿](draft/index.md) - 随便写写, 没有目的
 - [学习笔记](learn-note/index.md) - 在学习一些东西时, 随学习进度做的笔记
+- [日志](record/index.md) - 不能视作 log, 更像是日常记录, 操作留档
 
 ## 文章总览
 
 _可以点击表头排序_
 
-![[overview.base]]
+```base
+views:
+  - type: table
+    name: 文章属性
+    filters:
+      and:
+        - "!date.isEmpty()"
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - title
+      - tags
+      - date
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: date
+        direction: DESC
+
+```
 
 ## 链接
 
