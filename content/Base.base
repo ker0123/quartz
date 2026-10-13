@@ -1,8 +1,8 @@
 views:
   - type: table
-    name: 文章属性
+    name: 文章
     filters:
-      or:
+      and:
         - "!date.isEmpty()"
     groupBy:
       property: file.folder

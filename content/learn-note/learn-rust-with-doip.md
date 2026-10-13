@@ -89,9 +89,9 @@ tags:
 
 ```shell
 crate
-  |- doip-comm
-    |- writer
-    |- reader
+└── doip-comm
+    ├── writer
+    └── reader
 ```
 
 换句话说, 如果我想在 `src/bin/server.rs` 里面用到我写在 `src/lib.rs` 的内容, 我只需引入这棵模块树 ---- 在开头写上 `use crate::doip-comm`.
@@ -140,7 +140,7 @@ fn some_func(value: &int32) {
 }
 ```
 
-### 依赖的依赖, 不是我的依赖
+### 依赖的依赖 不是我的依赖
 
 这是 rust 特意设计的. 你并不能直接使用依赖包的依赖包, 必须重新在 cargo.toml 里面引入, 然后用 use 引入到代码里.
 
@@ -151,3 +151,67 @@ fn some_func(value: &int32) {
 发现这一点主要是因为这个 doip-comm 项目用到的 `simple-doip` 依赖, 它使用特征(trait)的写法, 给出一堆函数声明, 让我们自行填写. 实现了该特征的类就能当作 server 或者 celient 的处理器.
 
 在写的过程中, 我注意到 `impl` 这一段前面有个 `#[async_trait]` 的特征, 不引入的话, impl 内部所有以 `sync` 为前缀的函数都会报错. 一看就是多线程同步相关的东西, 现在还不想去深究.
+
+### async 和 await 异步编程
+
+简单来说, `async` 是一种异步的实现方式, 它与 "多线程", "协程" 这些概念是平行的.
+
+在 rust 编程中, 用 `async` 声明的函数被视为异步函数, 异步函数在调用之后不会立即执行, 而是返回一个 `Future`, 拿到 `Future` 之后, 我们需要另外使用一个执行器(`executor`)去启动它.
+
+而 `await` 是 rust 在写 `async` 函数时, 内部可以使用的一个工具, 能在一个异步函数运行然后等待另一个异步函数结束, 但如果所谓另一个异步函数被阻塞的话, 控制权会回到当前异步函数, 使其能够先执行后面的步骤. 例如:
+
+```rust
+use futures::executor::block_on;
+
+struct Song {
+    author: String,
+    name: String,
+}
+
+async fn learn_song() -> Song {
+    Song {
+        author: "曲婉婷".to_string(),
+        name: String::from("《我的歌声里》"),
+    }
+}
+
+async fn sing_song(song: Song) {
+    println!(
+        "给大家献上一首{}的{} ~ {}",
+        song.author, song.name, "你存在我深深的脑海里~ ~"
+    );
+}
+
+async fn dance() {
+    println!("唱到情深处，身体不由自主的动了起来~ ~");
+}
+
+async fn learn_and_sing() {
+    // 这里使用`.await`来等待学歌的完成，但是并不会阻塞当前线程，该线程在学歌的任务`.await`后，完全可以去执行跳舞的任务
+    let song = learn_song().await;
+
+    // 唱歌必须要在学歌之后
+    sing_song(song).await;
+}
+
+async fn async_main() {
+    let f1 = learn_and_sing();
+    let f2 = dance();
+
+    // `join!`可以并发的处理和等待多个`Future`，若`learn_and_sing Future`被阻塞，那`dance Future`可以拿过线程的所有权继续执行。若`dance`也变成阻塞状态，那`learn_and_sing`又可以再次拿回线程所有权，继续执行。
+    // 若两个都被阻塞，那么`async main`会变成阻塞状态，然后让出线程所有权，并将其交给`main`函数中的`block_on`执行器
+    futures::join!(f1, f2);
+}
+
+fn main() {
+    block_on(async_main());
+}
+```
+
+示例程序来自 [async 编程入门](https://beatai.org/rust-course/advance/async/getting-started). 最值得注意的是, 如果这么写, 我们能在等待歌曲学习完毕(`learn_song().await`)的时候, 先进行下一步, 也就是跳舞(`dance()`).
+
+对于这个 doip 项目来说的话, 很简单的一个使用场景就是: 我们能在等待回复的时候, 一边计时, 时间到了就不等了.
+
+### 题外话
+
+rust 开发每次写代码都会写得我好沮丧. 没几行是能一遍写对的, 每次都要照着报错和文档改很多次, 甚至得去问 AI...
