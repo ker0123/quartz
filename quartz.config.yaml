@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - overview.base
   theme:
     fontOrigin: googleFonts
     cdnCaching: true

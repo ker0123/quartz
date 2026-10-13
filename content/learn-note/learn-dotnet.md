@@ -3,8 +3,7 @@ title: 从 .NET, 到 WPF, 以及 C#
 date: 2025-06-09
 tags:
   - dotnet
-  - windows
-  - develop
+  - csharp
 ---
 
 *这篇文章被搁置了, 因为我发现在语言本身设计上, 和制作简单 GUI 软件的需求上, Rust 和 iced 都略胜一筹, 因此学那些去了.*

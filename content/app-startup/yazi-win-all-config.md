@@ -4,6 +4,7 @@ date: 2026-06-25
 tags:
   - yazi
   - windows
+  - startup
 ---
 
 [Yazi](https://github.com/sxyazi/yazi) 是一款非常好用的命令行文件管理工具, 配合 Vim, 可以在非图形界面下很方便地浏览, 管理, 编辑文件.
