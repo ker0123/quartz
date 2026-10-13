@@ -1,6 +1,6 @@
 ---
-title: "rust 学习笔记: 开发一个 TUI 应用"
-date: 2026-09-08 12:00:00
+title: "rust 学习笔记 - 开发一个 TUI 应用"
+date: 2026-09-08
 tags:
   - rust
   - ratatui

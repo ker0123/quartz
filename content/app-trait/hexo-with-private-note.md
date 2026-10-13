@@ -1,6 +1,6 @@
 ---
 title: 在 Hexo 上写加密笔记
-date: 2026-01-30 07:58:07
+date: 2026-01-30
 tags:
   - hexo
   - private

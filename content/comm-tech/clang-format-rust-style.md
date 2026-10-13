@@ -1,6 +1,6 @@
 ---
 title: 用 clang-format 复刻 rustfmt 风格
-date: 2025-09-02 08:52:03
+date: 2025-09-02
 tags:
   - clang-format
   - rust

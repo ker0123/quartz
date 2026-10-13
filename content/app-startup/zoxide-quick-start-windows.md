@@ -1,6 +1,6 @@
 ---
 title: zoxide (windows) 快速安装配置指南
-date: 2026-06-25 11:13:33
+date: 2026-06-25
 tags:
   - zoxide
   - windows

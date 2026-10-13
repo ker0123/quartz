@@ -1,6 +1,6 @@
 ---
 title: Tauri 的基本使用
-date: 2026-01-04 03:59:26
+date: 2026-01-04
 tags:
   - tauri
   - develop

@@ -1,6 +1,6 @@
 ---
 title: "Git 无法连接 Github: 代理问题"
-date: 2026-06-16 09:46:00
+date: 2026-06-16
 tags:
   - github
   - proxy

@@ -59,7 +59,7 @@ plugins:
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
-    enabled: false
+    enabled: true
     options:
       comments: true
       highlight: true

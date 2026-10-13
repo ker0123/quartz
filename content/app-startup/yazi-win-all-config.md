@@ -1,6 +1,6 @@
 ---
 title: yazi (windows) 快速安装和配置指南
-date: 2026-06-25 10:21:56
+date: 2026-06-25
 tags:
   - yazi
   - windows

@@ -1,6 +1,6 @@
 ---
 title: 移除 Sublime Text Build 4200 的证书授权检查
-date: 2026-02-12 07:34:51
+date: 2026-02-12
 tags:
   - sublime
   - crack
