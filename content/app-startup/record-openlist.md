@@ -3,6 +3,7 @@ title: "OpenList 部署与配置: 云盘 + FTP + 图床"
 date: 2025-05-29
 tags:
   - openlist
+  - startup
 ---
 
 OpenList, 以前叫 Alist. 是一个开源的网盘托管**服务端**软件. 使用者可以把 *百度网盘*, *123 云盘*, *Google Drive* 等网盘服务放到一处统一管理.

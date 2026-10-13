@@ -3,7 +3,7 @@ title: "Godot 学习记录: 与 Unity, UE 完全不同的结构思路"
 date: 2025-06-01
 tags:
   - godot
-  - develop
+  - gd-script
 ---
 
 学习使用 Godot 和 GDScript 的记录.

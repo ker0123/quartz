@@ -3,7 +3,7 @@ title: Tauri 的基本使用
 date: 2026-01-04
 tags:
   - tauri
-  - develop
+  - startup
 ---
 
 使用 Tauri 创建 GUI 应用. 主要技术是 Vue + JavaScript + Rust.

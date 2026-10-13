@@ -1,0 +1,10 @@
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - "!date.isEmpty()"
+    order:
+      - file.name
+      - title
+      - tags

@@ -4,6 +4,7 @@ date: 2026-06-25
 tags:
   - zoxide
   - windows
+  - startup
 ---
 
 [zoxide](https://github.com/ajeetdsouza/zoxide) 是一款命令行的快速导航工具. 配置完之后, 可以使用 `z` 非常快捷地跳转到经常访问的目录.

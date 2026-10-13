@@ -1,10 +1,9 @@
 ---
-title: "rust 学习笔记 - 开发一个 TUI 应用"
+title: rust 学习笔记 - 开发一个 TUI 应用
 date: 2026-09-08
 tags:
   - rust
   - ratatui
-  - develop
 ---
 
 之前少量学习 rust, 其中的思想和设计方式对我影响很大. 我开始统一使用大驼峰和蛇形命名, 使用三段式版本号, 在 c++ 中实现 `Result<T>`, 大量使用 lambda 表达式试图模仿闭包, 尝试使用组合配合模板类代替 "特征" ...

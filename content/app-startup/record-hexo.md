@@ -3,6 +3,7 @@ title: Hexo 安装与基础配置
 date: 2025-05-29
 tags:
   - hexo
+  - startup
 ---
 
 Hexo 是一个快速, 简洁且高效的博客框架. 使用 Markdown 解析文章, 依照配置好的主题来生成静态网页.

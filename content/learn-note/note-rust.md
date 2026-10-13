@@ -3,7 +3,7 @@ title: rust 学习笔记
 date: 2025-08-22
 tags:
   - rust
-  - develop
+  - learn
 ---
 
 个人学习 Rust 语言的记录. 比较基础, 属于一年之后再看会嘲笑自己的程度.

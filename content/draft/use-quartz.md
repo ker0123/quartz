@@ -3,6 +3,7 @@ title: 开始使用 quartz
 date: 2026-10-09
 tags:
   - quartz
+  - record
 ---
 测试下多端同步, 其中的手机端.
 
