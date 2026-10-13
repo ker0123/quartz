@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: 文章属性
+    filters:
+      or:
+        - "!date.isEmpty()"
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - title
+      - tags
+      - date
+    sort:
+      - property: date
+        direction: DESC
