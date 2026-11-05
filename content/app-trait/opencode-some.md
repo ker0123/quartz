@@ -81,28 +81,40 @@ mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是
 
 注入记忆这种事还得是插件来做, hook 一下流程, 不征得 agent 同意, 让它先想起相关的事情, 再做回复.
 
-与 AI 讨论了一番, 最后选择的是 **opencode-mem** 这个插件. 它的特点就是用户非常多, 维护非常活跃. 在别的插件下载量还是 3 位数的时候, 它已经是以 k 结尾了.
+与 AI 讨论了一番, 最后选择的是 **opencode-mem** 这个插件. 它的特点就是用户非常多, 维护非常活跃. 在别的插件下载量还是 3 位数的时候, 它已经是以 k 结尾了. 使用 `opencode plugin add opencode-mem` 就能立刻安装这个插件, 然后有个硬性的改配置文件需求. 找到插件在配置目录下生成的 `opencode-mem.jsonc`, 里面是所有配置项以及大量注释. 大部分不用动, 就我来说, 只改动了下面这些:
 
-当然不能光看下载量, 实际上它的特点是: 使用了本地的轻量嵌入模型 ONNX. 毫秒级的响应速度, 比 mem0 动不动 20s 的来回快多了. 占用大概 500-1000 MB. 要是觉得太多, 外接 openai 的 text-embedding-3-small 也是可选的.
+#### 低配机器使用外部嵌入模型
 
-使用 `opencode plugin add opencode-mem` 就能立刻安装这个插件, 然后有个硬性的改配置文件需求. 找到插件在配置目录下生成的 `opencode-mem.jsonc`, 里面是所有配置项以及大量注释. 大部分不用动, 主要是 **OpenCode Provider Settings (RECOMMENDED)** 这一段 (毕竟人家都全大写 RECOMMENDED 了), 阅读这一段, 然后加上两行配置选自己用来归纳和搜索记忆的模型:
+opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速度, 比 mem0 动不动 20s 的来回快多了. 占用大概 500-1000 MB, 在个人电脑上用着没什么问题, 对家用 VPS 来说就稍微有些大了, 常态下权重数据就占用 500-800 MB, 调用时能直接跑满 4v CPU.
+
+幸好外接 embedding 模型也是可选的. 考虑到 embedding 模型似乎不需要很厉害就行, 同时国内模型在响应速度和对中文的适配上更好, 我最终选择的是硅基流动中转的 `BAAI/bge-m3`. 配置这么写:
 
 ```json
-{
+  "embeddingApiUrl": "https://api.siliconflow.cn/v1",
+  "embeddingApiKey": "sk-************************************************",
+  "embeddingModel": "BAAI/bge-m3",
+```
+
+#### 选择提取和归纳记忆用的模型
+
+**OpenCode Provider Settings (RECOMMENDED)** 这一段基本上必须要改 (毕竟人家都全大写 RECOMMENDED 了), 阅读这一段, 然后加上两行配置选自己用来归纳和搜索记忆的模型:
+
+```json
   "opencodeProvider": "deepseek",
   "opencodeModel": "deepseek-flash"
-}
 ```
 
 一般来说直接填 opencode 里面能选用的模型就好, 否则需要额外填 api-key 这些东西.
 
+#### 选择记忆语言
+
 另一个值得修改的地方, 是保存记忆使用的语言. 默认是 auto, 根据文本内容自动猜测. 实际用着, 发现即使是日常中文对话, 有时会保存为中文, 另外一些时候会保存为英语甚至法语. 有必要重新设置一下. 该配置的位置在文件的 324 行
 
 ```json
-{
   "autoCaptureLanguage": "zh",
-}
 ```
+
+#### 开启跨项目记忆
 
 我个人来说, 希望 opencode 能跨项目记忆. 项目内的记忆还是写在 AGENTS.md 就行. 因此我还会改一行记忆范围的配置
 
@@ -114,15 +126,41 @@ mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是
 }
 ```
 
+#### 配置 webUI 接口
+
 插件还会创建一个 webUI 服务, 默认在本地的 4747 端口开放(127.0.0.1, 仅本机可访问). 当然, 这些也可以在配置文件里改. 就在 "Web Server Settings" 章节. 除了端口, 你还可以设置局域网开放, 账号密码...
 
 在 webUI 里可以看到生成的记忆内容. 同时. 日志文件保存在 `~\.opencode-mem\opencode-mem.log`. 出了什么问题可以去这看.
 
-总结起来, 就是这些改动:
+#### 最终配置改动
+
+完成了上述配置后, 我的配置总改动如下:
 
 ```diff
 --- 默认模板 (default template)
 +++ 当前配置 (~/.config/opencode/opencode-mem.jsonc)
+@@ -20,7 +20,7 @@
+   // Remote = set BOTH embeddingApiUrl and embeddingApiKey (OpenAI-compatible /embeddings).
+   
+   // Default: Nomic Embed v1 (768 dimensions, 8192 context, multilingual)
+-  "embeddingModel": "Xenova/nomic-embed-text-v1",
++  // "embeddingModel": "Xenova/nomic-embed-text-v1",
+ 
+   // Opt-in Nomic task prefixes (search_document: / search_query:). After enabling,
+   // re-index existing memories so store and query vectors stay aligned.
+@@ -54,9 +54,9 @@
+   // "embeddingModel": "intfloat/multilingual-e5-large",     // 1024 dims, query:/passage: prefixes (auto)
+   
+   // Optional: OpenAI-compatible API for embeddings (both URL and key required)
+-  // "embeddingApiUrl": "https://api.openai.com/v1",
+-  // "embeddingApiKey": "env://OPENAI_API_KEY",  // or "sk-..." / "file:///path/to/key"
+-  // "embeddingModel": "text-embedding-3-small",  // 1536 dims, auto-detected
++  "embeddingApiUrl": "https://api.siliconflow.cn/v1",
++  "embeddingApiKey": "sk-************************************************",
++  "embeddingModel": "BAAI/bge-m3",
+  
+   // ============================================
+   // Web Server Settings
 @@ -66,14 +66,14 @@
    "webServerEnabled": true,
    
@@ -136,8 +174,8 @@ mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是
    // Optional HTTP Basic Auth for the web UI. Accepts literal, env://, or file:// secrets.
 -  // "webServerAuthPassword": "",
 -  // "webServerAuthUsername": "",
-+  "webServerAuthPassword": "************",
-+  "webServerAuthUsername": "Jane",
++  "webServerAuthPassword": "***********",
++  "webServerAuthUsername": "ker0123",
  
    // Required when webServerHost is not loopback. Protects /api/* with Bearer / X-Opencode-Mem-Token.
    // "webServerApiToken": "env://OPENCODE_MEM_WEB_TOKEN",
