@@ -39,7 +39,7 @@ TUI 的话, 要关闭标签页, 可以在配置文件夹(`~/.config/opencode/`)�
 
 ## golbal skills
 
-可以用 `npx skills` 命令去全局安装 agents 用的技能 (不动为啥 npx 会内置这种命令, 但是挺好用的).
+可以用 `npx skills` 命令去全局安装 agents 用的技能 (不懂为啥 npx 会内置这种命令, 但是挺好用的).
 
 整个过程与 opencode 无关, skills 保存在 `~/agents` 这种通用目录里, opencode 只是 "凑巧" 读到.
 
