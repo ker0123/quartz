@@ -104,6 +104,68 @@ mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是
 }
 ```
 
+我个人来说, 希望 opencode 能跨项目记忆. 项目内的记忆还是写在 AGENTS.md 就行. 因此我还会改一行记忆范围的配置
+
+```json
+{
+  "memory": {
+    "defaultScope": "all-projects"
+  },
+}
+```
+
 插件还会创建一个 webUI 服务, 默认在本地的 4747 端口开放(127.0.0.1, 仅本机可访问). 当然, 这些也可以在配置文件里改. 就在 "Web Server Settings" 章节. 除了端口, 你还可以设置局域网开放, 账号密码...
 
 在 webUI 里可以看到生成的记忆内容. 同时. 日志文件保存在 `~\.opencode-mem\opencode-mem.log`. 出了什么问题可以去这看.
+
+总结起来, 就是这些改动:
+
+```diff
+--- 默认模板 (default template)
++++ 当前配置 (~/.config/opencode/opencode-mem.jsonc)
+@@ -66,14 +66,14 @@
+   "webServerEnabled": true,
+   
+   // Port for web UI server
+-  "webServerPort": 4747,
++  "webServerPort": 14747,
+   
+   // Host address for web UI (use 127.0.0.1 for local only, 0.0.0.0 for network access)
+   "webServerHost": "127.0.0.1",
+ 
+   // Optional HTTP Basic Auth for the web UI. Accepts literal, env://, or file:// secrets.
+-  // "webServerAuthPassword": "",
+-  // "webServerAuthUsername": "",
++  "webServerAuthPassword": "************",
++  "webServerAuthUsername": "Jane",
+ 
+   // Required when webServerHost is not loopback. Protects /api/* with Bearer / X-Opencode-Mem-Token.
+   // "webServerApiToken": "env://OPENCODE_MEM_WEB_TOKEN",
+@@ -104,7 +104,7 @@
+   // Default scope for memory list/search queries
+   // "project" keeps queries within the current project, "all-projects" searches across all project shards
+   "memory": {
+-    "defaultScope": "project"
++    "defaultScope": "all-projects"
+   },
+ 
+   // ============================================
+@@ -142,6 +142,8 @@
+    // (auto-capture summaries, profile learning; default 90000, clamped to 10000..600000;
+    // invalid values fall back to the default; numeric strings are coerced):
+    // "opencodeTimeoutMs": 180000,
++   "opencodeProvider": "deepseek",
++   "opencodeModel": "deepseek-flash",
+ 
+    // ============================================
+    // Auto-Capture Settings
+@@ -319,7 +321,7 @@
+ 
+   // Language for auto-capture summaries and user profile learning (default: "auto" for auto-detection)
+   // Options: "auto", "en", "id", "zh", "ja", "es", "fr", "de", "ru", "pt", "ar", "ko"
+-  // "autoCaptureLanguage": "auto",
++  "autoCaptureLanguage": "zh",
+ 
+   // ============================================
+   // Toast Notifications
+```
