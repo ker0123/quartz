@@ -68,6 +68,7 @@ opencode plugin add @mem0/opencode-plugin
 ```
 
 但即使安装了, 进入 opencode 也会报错:
+
 > "Failed to check Server plugin "@mem0/opencode-plugin": Plugin must export a default definition with an id and an effect or setup function."
 
 mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是根据 v1 的 API 写的. 放到 V2 上面, 插件没法用.
@@ -89,11 +90,19 @@ mem0 官方插件, 至少在我写这篇文章, 0.4.1 版本的时候, 完全是
 ```json
 {
   "opencodeProvider": "deepseek",
-  "opencodeModel": "deepseek-flash",
+  "opencodeModel": "deepseek-flash"
 }
 ```
 
 一般来说直接填 opencode 里面能选用的模型就好, 否则需要额外填 api-key 这些东西.
+
+另一个值得修改的地方, 是保存记忆使用的语言. 默认是 auto, 根据文本内容自动猜测. 实际用着, 发现即使是日常中文对话, 有时会保存为中文, 另外一些时候会保存为英语甚至法语. 有必要重新设置一下. 该配置的位置在文件的 324 行
+
+```json
+{
+  "autoCaptureLanguage": "zh",
+}
+```
 
 插件还会创建一个 webUI 服务, 默认在本地的 4747 端口开放(127.0.0.1, 仅本机可访问). 当然, 这些也可以在配置文件里改. 就在 "Web Server Settings" 章节. 除了端口, 你还可以设置局域网开放, 账号密码...
 
