@@ -19,19 +19,6 @@ _可以点击表头排序_
 
 ![[Base.base]]
 
-## 链接
-
-- public:
-  - [博客 blog.kers.site](https://blog.kers.site) - 先前基于 hexo 的博客. 未来将切换为本站
-  - [网盘 pan.kers.site](https://pan.kers.site) - 基于 openlist 的在线存储
-- protect:
-  - [云服务器面板 app.rainyun.com](https://app.rainyun.com) - 自己续费的云服务器的面板
-  - [cloudflare 面板 dash.cloudflare.com](https://dash.cloudflare.com) - 这个站是用其免费服务搭建的静态网站
-  - [密码管理器 vw.kers.site](https://vw.kers.site) - 基于 valutwarden 的跨平台密码管理和自动填充
-  - [邮箱服务器 mx.kers.site](https://mx.kers.site) - 基于 stalwart 的自托管邮箱服务
-- private:
-  - [机器人面板 kers.site:6185](http://kers.site:6185) - 基于 astrbot 的自托管 AI 聊天机器人
-
 ## 联系方式
 
 如果你不知道从哪里看到了这个网站, 还想联系我:
