@@ -74,13 +74,13 @@ Webhook 是个非常简单粗暴, 但可自定义程度非常高的功能: 被�
 https://ntfy.sh/vk-kers-8f3a91c2?tpl=yes&md=yes&t={{if%20eq%20.event_name%20"task.created"}}🆕%20{{else%20if%20eq%20.event_name%20"task.updated"}}✏️%20{{else%20if%20eq%20.event_name%20"task.comment.created"}}💬%20{{else%20if%20eq%20.event_name%20"task.comment.edited"}}🗯️%20{{else%20if%20eq%20.event_name%20"task.reminder.fired"}}🔔%20{{else%20if%20or%20(eq%20.event_name%20"task.overdue")%20(eq%20.event_name%20"tasks.overdue")}}❌%20{{end}}{{with%20.data.task}}{{.identifier}}%20{{.title}}{{else}}Vikunja{{end}}&m={{$f%20:=%20"01-02%2015:04"}}{{$l%20:=%20"2006-01-02T15:04:05Z07:00"}}{{$z%20:=%20"Asia/Shanghai"}}{{if%20or%20(eq%20.event_name%20"task.comment.created")%20(eq%20.event_name%20"task.comment.edited")}}{{.data.doer.username}}：{{printf%20"%25.300s"%20(regexReplaceAll%20"%3C[^%3E]*%3E"%20.data.comment.comment%20"")}}%0A{{else%20if%20eq%20.event_name%20"tasks.overdue"}}{{len%20.data.tasks}}%20个任务%0A{{else}}{{with%20.data.task}}{{if%20.description}}{{printf%20"%25.300s"%20(trim%20(regexReplaceAll%20"%3C[^%3E]*%3E"%20(regexReplaceAll%20"%3Cbr[^%3E]*%3E|%3C/p%3E"%20.description%20"%5Cn")%20""))}}%0A{{end}}{{if%20eq%20$.event_name%20"task.reminder.fired"}}提醒%20{{dateInZone%20$f%20(toDate%20$l%20$.data.reminder.reminder)%20$z}}%0A{{else}}{{with%20.reminders}}{{range%20.}}提醒%20{{dateInZone%20$f%20(toDate%20$l%20.reminder)%20$z}}%0A{{end}}{{end}}{{end}}{{if%20ne%20.start_date%20"0001-01-01T00:00:00Z"}}开始%20{{dateInZone%20$f%20(toDate%20$l%20.start_date)%20$z}}%0A{{end}}{{if%20ne%20.end_date%20"0001-01-01T00:00:00Z"}}结束%20{{dateInZone%20$f%20(toDate%20$l%20.end_date)%20$z}}%0A{{end}}{{if%20ne%20.due_date%20"0001-01-01T00:00:00Z"}}截止%20{{dateInZone%20$f%20(toDate%20$l%20.due_date)%20$z}}%0A{{end}}{{end}}{{end}}{{with%20.data.task}}[打开任务](https://kan.kers.site/tasks/{{.id}}){{end}}&priority={{if%20eq%20.event_name%20"task.reminder.fired"}}high{{else%20if%20or%20(eq%20.event_name%20"task.created")%20(eq%20.event_name%20"task.updated")%20(eq%20.event_name%20"task.comment.created")%20(eq%20.event_name%20"task.comment.edited")}}low{{else}}default{{end}}
 ```
 
-![使用设计后的 url 通知效果](_assets/ntfy-json-view.png)
+![使用设计后的 url 通知效果](_assets/ntfy-pretty-view.png)
 
 注意, 在设置里的用户级 webhook 设置好任务提醒和任务超时之外, 在每个项目也可以设置多种触发方式的 webhook. 点击项目右侧三点图标, 就能看到.
 
 上面的 url 可以在两处用. 在使用用户级的 webhook 时, 全部勾上就好, 这样会在提醒时和任务过期时触发通知.
 
-在使用项目级 webhook 时, 选择很多, 但建议仅勾选 "新建任务", "新建任务评论", 不要勾选 "编辑任务", "编辑评论" ---- 在网页端的操作是实时保存的, 这意味着编辑时, 稍微停顿一下, 就会触发 webhook 发送通知.
+在使用项目级 webhook 时, 选择很多, 但建议仅勾选 "新建任务", "新建任务评论". 不要勾选 "编辑任务", "编辑评论" ---- 在网页端的操作是实时保存的, 这意味着编辑时, 稍微停顿一下, 就会触发 webhook 发送通知.
 
 ## 总结
 
