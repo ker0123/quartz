@@ -11,6 +11,8 @@ tags:
 
 Yazi 的官网提供了 [详尽的配置方式说明](https://yazi-rs.github.io/docs/installation), 但由于其兼容的系统较多, 每次想要找到一整套 windows 下的配置流程, 就比较麻烦. 因此这里总结了仅 windows 下的安装和基础配置方式.
 
+<!--more-->
+
 ## 安装
 
 建议使用 scoop 安装. 没有 scoop 的可以先安装, 很好用.

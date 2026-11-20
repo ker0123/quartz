@@ -8,6 +8,8 @@ tags:
 
 Hexo 博客的源文档存放在服务器上, 通过 ssh + vim 编辑太为硬核, 通过 vscode + ssh-remote 编译会爆内存. 最终找到这个基于 Github Action 的本地编辑, 远程部署的方案.
 
+<!--more-->
+
 这是我使用 vscode + ssh-remote 插件编辑文档时, 服务器资源的占用:
 
 ![常态占 1G 内存, 峰值直接到顶, CPU 偶尔到顶导致远程手段卡住](_assets/vscode-cause-bad.png)

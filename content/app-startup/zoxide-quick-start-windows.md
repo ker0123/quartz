@@ -11,6 +11,8 @@ tags:
 
 这里讲 Windows 下如何快速安装和配置.
 
+<!--more-->
+
 ## 安装
 
 如果之前安装了 scoop, 可以直接使用 `scoop install zoxide` 安装.
