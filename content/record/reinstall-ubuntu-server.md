@@ -11,6 +11,8 @@ tags:
 
 重装的内容大概是: nginx, rustdesk, hexo, openlist, radicale.
 
+<!--more-->
+
 ## 创建个人用户
 
 用下面命令交互式创建用户

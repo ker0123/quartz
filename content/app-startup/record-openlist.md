@@ -10,6 +10,8 @@ OpenList, 以前叫 Alist. 是一个开源的网盘托管**服务端**软件. �
 
 本文主要记录我自己使用 OpenList, 将服务器变成网盘, 通过 SFTP 将个人电脑(的部分文件)变得可以公网访问, 以及搭建一个简易版图床, 为文件分别设置权限的过程.
 
+<!--more-->
+
 ## 安装
 
 参考 [官方文档](https://alistgo.com/zh/guide/) 进行 [一键脚本安装](https://alistgo.com/zh/guide/install/script.html) 或者 [手动安装](https://alistgo.com/zh/guide/install/manual.html).

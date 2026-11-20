@@ -5,7 +5,9 @@ tags:
   - git
 ---
 
-最开始, 我只是在网上搜了 "git 如何使用分支". 然后搜到一张有 `main`, `develop`, `release`, `feature/**`. `hotfix/**` 的图. 然后就拿着去用了.
+最开始, 我只是在网上搜了 "git 如何使用分支". 然后搜到一张有 `main`, `develop`, `release`, `feature/**`. `hotfix/**` 的图. 然后就拿着去用了...
+
+<!--more-->
 
 用着用着, 发行有些操作过于复杂: 如果 main 分支没被保护, 直接在 main 上提交也没关系; release 分支更是多余, 我直接 develop 分支上做测试不也行? feature 分支用的挺多, 但大部分时候在 develop 上 commit, 只有开发到一半环境不稳定时, 才会从前面拉一个 feature 分支开发另外一个功能. hotfix 用的时候不错, 但是 fix 完了合并阶段有点烧脑...
 

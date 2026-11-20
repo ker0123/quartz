@@ -7,6 +7,8 @@ tags:
   - quartz
 ---
 
+<!--more-->
+
 ## 迁移前夕
 
 之前, 我用 [hexo](https://github.com/hexojs/hexo) 这个静态博客项目, 写自己的在线同步笔记, 然后可以在公网访问和阅读. 最早一篇笔记在 2025/05/29 写下, 是一篇讲我怎么部署 alist(另外一个网盘服务) 的文章(见 [OpenList 部署与配置](app-startup/record-openlist.md)), 到现在已经一年多了. 期间断断续续写了总共 20 多篇文章, 对于一年零五个月的跨度, 实在太少了.
