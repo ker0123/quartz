@@ -49,12 +49,12 @@ npm install
 ```yml
 # Site
 title: Ker's site.
-subtitle: 'ker0123 的个人网站, 记载了他一段时间的所学.'
-description: '网站开始于 2025 年 5 月, 自己大学毕业的后几天. 实际上已经工作快半年了. 这段时间发觉自己的技术栈还是太浅了, 对于软件这一块, 尤其是互联网软件, 相关知识及其欠缺. 于是租了个服务器, 开始一边学习一边尝试自己写一些东西.'
+subtitle: "ker0123 的个人网站, 记载了他一段时间的所学."
+description: "网站开始于 2025 年 5 月, 自己大学毕业的后几天. 实际上已经工作快半年了. 这段时间发觉自己的技术栈还是太浅了, 对于软件这一块, 尤其是互联网软件, 相关知识及其欠缺. 于是租了个服务器, 开始一边学习一边尝试自己写一些东西."
 keywords:
 author: ker0123
 language: ch
-timezone: 'Asia/Shanghai'
+timezone: "Asia/Shanghai"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

@@ -59,23 +59,23 @@ EmptyLineBeforeAccessModifier: Always
 FixNamespaceComments: true
 IncludeBlocks: Regroup
 IncludeCategories:
-  - Regex:           '^<ext/.*\.h>'
-    Priority:        2
-    SortPriority:    0
-    CaseSensitive:   false
-  - Regex:           '^<.*\.h>'
-    Priority:        1
-    SortPriority:    0
-    CaseSensitive:   false
-  - Regex:           '^<.*'
-    Priority:        2
-    SortPriority:    0
-    CaseSensitive:   false
-  - Regex:           '.*'
-    Priority:        3
-    SortPriority:    0
-    CaseSensitive:   false
-IncludeIsMainRegex: '([-_](test|unittest))?$'
+  - Regex: '^<ext/.*\.h>'
+    Priority: 2
+    SortPriority: 0
+    CaseSensitive: false
+  - Regex: '^<.*\.h>'
+    Priority: 1
+    SortPriority: 0
+    CaseSensitive: false
+  - Regex: "^<.*"
+    Priority: 2
+    SortPriority: 0
+    CaseSensitive: false
+  - Regex: ".*"
+    Priority: 3
+    SortPriority: 0
+    CaseSensitive: false
+IncludeIsMainRegex: "([-_](test|unittest))?$"
 IndentCaseLabels: true
 IndentPPDirectives: BeforeHash
 IndentWidth: 4

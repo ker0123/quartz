@@ -381,11 +381,11 @@ $env.INFOPATH = $"/home/linuxbrew/.linuxbrew/share/info:(if ($env | get -o INFOP
 
 官网提供了 3 种安装方式:
 
-| Method | Best for | Why you would use it |
-|--------|----------|--------------------|
-| Docker | Most self-hosted deployments | Simplest upgrades, predictable setup, and easy rollback |
+| Method         | Best for                                       | Why you would use it                                               |
+| -------------- | ---------------------------------------------- | ------------------------------------------------------------------ |
+| Docker         | Most self-hosted deployments                   | Simplest upgrades, predictable setup, and easy rollback            |
 | install script | Linux admins who want systemd services quickly | Sets up hbbs, hbbr, and a client config flow with less manual work |
-| Debian package | Debian-based systems using package tooling | Keeps installation closer to native package management |
+| Debian package | Debian-based systems using package tooling     | Keeps installation closer to native package management             |
 
 docker 之前试过, 因为有过每次重启都清除软件持续数据的经历, 以及装一堆版本没一个能用, 端口还容易自己混淆的经历, 不想使用.
 
@@ -478,11 +478,11 @@ nushell 的日志存放在 `$nu.history-path`.
 
 1. 备份当前系统, 然后回退到重装系统前
 2. 列出需要备份的几个点: 包括 `frps`, `nginx`, `openlist`, `radicale`, `ssh`
-    - frps 需要备份 `frps.toml` 配置文件
-    - nginx 需要备份 `.conf/default.conf` 文件, 还有 `/etc/ssl/certs/fullchain.pem` 和 `/etc/ssl/private/privkey.pem`.
-    - openlist 把之前挂载的大量文件备份一下, 然后打开网站, 去设置里面生成好 json 格式的配置文件.
-    - radicale 需要备份安装目录下 `collections` 文件夹, 里面是实实在在的日历数据.
-    - ssh 需要备份各种密钥对, 还有 `know_hosts` 文件, 以及 `authorized_keys` 文件.
+   - frps 需要备份 `frps.toml` 配置文件
+   - nginx 需要备份 `.conf/default.conf` 文件, 还有 `/etc/ssl/certs/fullchain.pem` 和 `/etc/ssl/private/privkey.pem`.
+   - openlist 把之前挂载的大量文件备份一下, 然后打开网站, 去设置里面生成好 json 格式的配置文件.
+   - radicale 需要备份安装目录下 `collections` 文件夹, 里面是实实在在的日历数据.
+   - ssh 需要备份各种密钥对, 还有 `know_hosts` 文件, 以及 `authorized_keys` 文件.
 3. 为了保证数据不损坏, 先使用 `tar -cvzf` 将文件打包成 tar.gz, 然后用 `open xx.tar.gz | hash sha256 | save -f sha256.txt` 计算并保存校验值, 每次上传下载完都建议一下完整性.
 4. 用 sftp 将文件下载到本地电脑(不使用 scp, 因为没法断点续传). 这一步直接用 FileZilla 可视化操作了, 不多讲
 5. 回到当前备份(重装系统后的备份)
@@ -672,6 +672,7 @@ openlist 安装位置是 `/opt/openlist`, 里面同样有一个 `openlist` 可�
 ```shell
 sudo apt install nodejs
 ```
+
 需要把之前的 ssh-key 全拿回来.
 
 中途发现之前的备份没做好, 于是话了很大工夫 [本地备份并恢复文件](#本地备份并恢复文件).

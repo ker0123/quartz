@@ -6,7 +6,7 @@ tags:
   - startup
 ---
 
-OpenList, 以前叫 Alist. 是一个开源的网盘托管**服务端**软件. 使用者可以把 *百度网盘*, *123 云盘*, *Google Drive* 等网盘服务放到一处统一管理.
+OpenList, 以前叫 Alist. 是一个开源的网盘托管**服务端**软件. 使用者可以把 _百度网盘_, _123 云盘_, _Google Drive_ 等网盘服务放到一处统一管理.
 
 本文主要记录我自己使用 OpenList, 将服务器变成网盘, 通过 SFTP 将个人电脑(的部分文件)变得可以公网访问, 以及搭建一个简易版图床, 为文件分别设置权限的过程.
 
@@ -36,7 +36,8 @@ curl -fsSL "https://alistgo.com/v3.sh" -o v3.sh && bash v3.sh
 
 在 [AList Release](https://github.com/Xhofe/alist/releases) 获取对应系统的安装包.
 
-在 Linux 系统上, 使用以下命令安装  
+在 Linux 系统上, 使用以下命令安装
+
 ```sh
 # 解压下载的文件，得到可执行文件：
 tar -zxvf alist-xxxx.tar.gz
@@ -64,7 +65,7 @@ chmod +x alist
 
 如果你已经可以通过浏览器访问 OpenList 生成的网页, 你也可以尝试直接使用默认帐号 `admin` 和密码 `admin` 登录. 然后点击页面下方的 [管理] 按钮, 可视化地编辑帐号密码.
 
-*上述方法仅在文章发布时(2025-05-29), AList 验证可用, 不保证后续的 OpenList 是否仍然可用*
+_上述方法仅在文章发布时(2025-05-29), AList 验证可用, 不保证后续的 OpenList 是否仍然可用_
 
 ### 开始使用
 
@@ -174,5 +175,5 @@ alist restart
 手动安装之后, 添加守护进程来启停服务存在一些问题. 文章写成时暂未解决, 在 GitHub 项目下提了[issues](https://github.com/AlistGo/alist/issues/8611).
 
 > 2025 年 6 月 11 日. Alist 项目发起者将项目卖给了某商业公司, 同时代码中可能加入了后门. 从此 Alist 软件不再安全.
-> 
+>
 > 鉴于原 Alist 项目频繁删 issues(上文中的 issues 链接就被删了, 也是这个才使我注意到此事), 大部分相关信息链接未来可能无法访问, 这里只提供社区版 fork 的 GitHub [项目地址](https://github.com/OpenListTeam/OpenList).

@@ -149,7 +149,7 @@ let counter_copy = counter;
 
 ### 消息通道
 
-使用标准库 `std::sync::mpsc` 创建通道, 其中 `mpsc` 就是 *multiple producer, single consumer* 的缩写.
+使用标准库 `std::sync::mpsc` 创建通道, 其中 `mpsc` 就是 _multiple producer, single consumer_ 的缩写.
 
 使用闭包和 `move` 关键字将发送者变量或接受者变量移交给子线程.
 
@@ -218,7 +218,8 @@ match(match_name(name_k));
 
 引入模块后, 可以使用模块中的所有函数, 但必须写成 `lced::run(...)` 这种形式; 引入函数后, 可以直接使用函数: `run(...)`.
 
-可以用 `use lced::widget::{Column, button, column}` 代替  
+可以用 `use lced::widget::{Column, button, column}` 代替
+
 ```rust
 use lced::widget::Column;
 use lced::widget::button;

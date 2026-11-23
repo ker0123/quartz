@@ -118,10 +118,10 @@ opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速
 
 我个人来说, 希望 opencode 能跨项目记忆. 项目内的记忆还是写在 AGENTS.md 就行. 因此我还会改一行记忆范围的配置
 
-```json
+```jsonc
 {
   "memory": {
-    "defaultScope": "all-projects"
+    "defaultScope": "all-projects",
   },
 }
 ```
@@ -141,16 +141,16 @@ opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速
 +++ 当前配置 (~/.config/opencode/opencode-mem.jsonc)
 @@ -20,7 +20,7 @@
    // Remote = set BOTH embeddingApiUrl and embeddingApiKey (OpenAI-compatible /embeddings).
-   
+
    // Default: Nomic Embed v1 (768 dimensions, 8192 context, multilingual)
 -  "embeddingModel": "Xenova/nomic-embed-text-v1",
 +  // "embeddingModel": "Xenova/nomic-embed-text-v1",
- 
+
    // Opt-in Nomic task prefixes (search_document: / search_query:). After enabling,
    // re-index existing memories so store and query vectors stay aligned.
 @@ -54,9 +54,9 @@
    // "embeddingModel": "intfloat/multilingual-e5-large",     // 1024 dims, query:/passage: prefixes (auto)
-   
+
    // Optional: OpenAI-compatible API for embeddings (both URL and key required)
 -  // "embeddingApiUrl": "https://api.openai.com/v1",
 -  // "embeddingApiKey": "env://OPENAI_API_KEY",  // or "sk-..." / "file:///path/to/key"
@@ -158,25 +158,25 @@ opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速
 +  "embeddingApiUrl": "https://api.siliconflow.cn/v1",
 +  "embeddingApiKey": "sk-************************************************",
 +  "embeddingModel": "BAAI/bge-m3",
-  
+
    // ============================================
    // Web Server Settings
 @@ -66,14 +66,14 @@
    "webServerEnabled": true,
-   
+
    // Port for web UI server
 -  "webServerPort": 4747,
 +  "webServerPort": 14747,
-   
+
    // Host address for web UI (use 127.0.0.1 for local only, 0.0.0.0 for network access)
    "webServerHost": "127.0.0.1",
- 
+
    // Optional HTTP Basic Auth for the web UI. Accepts literal, env://, or file:// secrets.
 -  // "webServerAuthPassword": "",
 -  // "webServerAuthUsername": "",
 +  "webServerAuthPassword": "***********",
 +  "webServerAuthUsername": "ker0123",
- 
+
    // Required when webServerHost is not loopback. Protects /api/* with Bearer / X-Opencode-Mem-Token.
    // "webServerApiToken": "env://OPENCODE_MEM_WEB_TOKEN",
 @@ -104,7 +104,7 @@
@@ -186,7 +186,7 @@ opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速
 -    "defaultScope": "project"
 +    "defaultScope": "all-projects"
    },
- 
+
    // ============================================
 @@ -142,6 +142,8 @@
     // (auto-capture summaries, profile learning; default 90000, clamped to 10000..600000;
@@ -194,16 +194,16 @@ opencode-mem 默认使用本地的轻量嵌入模型 ONNX. 毫秒级的响应速
     // "opencodeTimeoutMs": 180000,
 +   "opencodeProvider": "deepseek",
 +   "opencodeModel": "deepseek-flash",
- 
+
     // ============================================
     // Auto-Capture Settings
 @@ -319,7 +321,7 @@
- 
+
    // Language for auto-capture summaries and user profile learning (default: "auto" for auto-detection)
    // Options: "auto", "en", "id", "zh", "ja", "es", "fr", "de", "ru", "pt", "ar", "ko"
 -  // "autoCaptureLanguage": "auto",
 +  "autoCaptureLanguage": "zh",
- 
+
    // ============================================
    // Toast Notifications
 ```

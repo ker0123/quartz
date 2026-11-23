@@ -18,7 +18,6 @@ tags:
 
 ### ngnix 配置
 
-
 ngnix 反向代理能为某个域名设置 "需要认证". 以该站点下 auth 路径为例:
 
 ```
@@ -158,7 +157,7 @@ password: hello
 ---
 title: Hello World
 tags:
-- 作为日记加密
+  - 作为日记加密
 date: 2016-03-30 21:12:21
 password: mikemessi
 abstract: 有东西被加密了, 请输入密码查看.
@@ -179,8 +178,8 @@ encrypt: # hexo-blog-encrypt
   abstract: 有东西被加密了, 请输入密码查看.
   message: 您好, 这里需要密码.
   tags:
-  - {name: tagNameA, password: 密码A}
-  - {name: tagNameB, password: 密码B}
+    - { name: tagNameA, password: 密码A }
+    - { name: tagNameB, password: 密码B }
   theme: xray
   wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
   wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
@@ -192,14 +191,14 @@ encrypt: # hexo-blog-encrypt
 
 #### 可用的主题
 
-+ [default](https://mhexo.github.io/2020/12/23/Theme-Test-Default/)
-+ [blink](https://mhexo.github.io/2020/12/23/Theme-Test-Blink/)
-+ [shrink](https://mhexo.github.io/2020/12/23/Theme-Test-Shrink/)
-+ [flip](https://mhexo.github.io/2020/12/23/Theme-Test-Flip/)
-+ [up](https://mhexo.github.io/2020/12/23/Theme-Test-Up/)
-+ [surge](https://mhexo.github.io/2020/12/23/Theme-Test-Surge/)
-+ [wave](https://mhexo.github.io/2020/12/23/Theme-Test-Wave/)
-+ [xray](https://mhexo.github.io/2020/12/23/Theme-Test-Xray/)
+- [default](https://mhexo.github.io/2020/12/23/Theme-Test-Default/)
+- [blink](https://mhexo.github.io/2020/12/23/Theme-Test-Blink/)
+- [shrink](https://mhexo.github.io/2020/12/23/Theme-Test-Shrink/)
+- [flip](https://mhexo.github.io/2020/12/23/Theme-Test-Flip/)
+- [up](https://mhexo.github.io/2020/12/23/Theme-Test-Up/)
+- [surge](https://mhexo.github.io/2020/12/23/Theme-Test-Surge/)
+- [wave](https://mhexo.github.io/2020/12/23/Theme-Test-Wave/)
+- [xray](https://mhexo.github.io/2020/12/23/Theme-Test-Xray/)
 
 ## 另外
 

@@ -27,7 +27,7 @@ tags:
 
 ![start-sshd-service](_assets/start-sshd-service.png)
 
-*如果找不到该服务, 请检测 OpenSSH Server 是否安装成功, 或者重启电脑再去查找*
+_如果找不到该服务, 请检测 OpenSSH Server 是否安装成功, 或者重启电脑再去查找_
 
 ### Windows 配置 - 真实用户名和密码
 
@@ -53,7 +53,7 @@ tags:
 
 ```yaml
 Match Group administrators
-       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
 ```
 
 然后在 `~/.ssh` 中创建自己的密钥对, 以及 `authorized_keys` 文件, 记录外部设备的公钥.
@@ -69,6 +69,7 @@ Match Group administrators
 以下是最简的一套内网穿透配置.
 
 服务器上:
+
 ```toml
 # frps.toml
 
@@ -78,6 +79,7 @@ bindPort = 7000
 ```
 
 个人电脑上:
+
 ```toml
 # frpc.toml
 
@@ -98,9 +100,9 @@ remotePort = 6000
 
 使用第三台安装了 `sshd` 客户端的电脑, 通过命令行执行 `ssh kerol@kers.site -p 6000`(kerol 换成个人电脑用户名; kers.site 换成自己的服务器域名), 如果出现输入密码的界面, 代表配置成功.
 
-*如果没有成功, 最有可能是因为你关闭了执行 frp 命令的终端, 导致内网穿透服务提前结束. 请保留对应终端进行连通测试*
+_如果没有成功, 最有可能是因为你关闭了执行 frp 命令的终端, 导致内网穿透服务提前结束. 请保留对应终端进行连通测试_
 
-*后续会将如何将 frp 注册为系统服务, 开机自启动且在后台保持运行*
+_后续会将如何将 frp 注册为系统服务, 开机自启动且在后台保持运行_
 
 运行原理为: 内网穿透建立后, 访问公网服务器的 6000 号端口, 就相当于访问个人电脑的 22 号端口. 个人电脑的 `sshd` 服务就运行在这个端口上. 从此, 任意能访问公网服务器的设备, 便可通过这个映射关系访问个人电脑的 `sshd` 服务.
 

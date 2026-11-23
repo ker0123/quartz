@@ -36,7 +36,8 @@ Hexo 的文章源一般只放在 source 文件夹中, 其它文件夹大部分�
 
 上传到 github 的命令可以参考如下. 基本就是本地初始化仓库, 然后为仓库设置远程地址, 最后提交和推送.
 
-如果要上传整个 hexo 文件夹:  
+如果要上传整个 hexo 文件夹:
+
 ```bash
 cd /path/to/hexo
 git init
@@ -54,7 +55,8 @@ git remote add origin git@github.com:ker0123/hexo.git
 git push -u origin main
 ```
 
-如果只上传 source 文件夹:  
+如果只上传 source 文件夹:
+
 ```bash
 cd /path/to/hexo/source
 git init
@@ -76,9 +78,9 @@ name: deploy on server
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   workflow_dispatch:
 
