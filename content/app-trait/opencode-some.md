@@ -1,12 +1,14 @@
 ---
-title: opencode 的一些使用技巧
+title: "opencode 使用技巧: opencode-v2, skills 和长期记忆"
 date: 2026-11-03
-tag:
+tags:
   - opencode
   - sync
 ---
 
-在使用 AI 辅助编程这一块, 我基本上 all in 了 opencode. 使用过程中, 了解了很多让 opencode 更好用的技巧.
+在使用 AI 辅助编程这一块, 我基本上 all in 了 opencode. 特别是当 opencode v2 发布之后.
+
+v2 有更成熟的前后端分离设计. 在此基础上使用全局 skills, 跨会话长期记忆... 真的很快很好用.
 
 <!--more-->
 
